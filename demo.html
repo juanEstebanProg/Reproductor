@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración - Mi Reproductor de Música</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .demo-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #1db954, #1ed760);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+        .demo-btn:hover {
+            transform: translateY(-2px);
+        }
+        .feature-list {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        .step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border-left: 4px solid #1db954;
+        }
+        h1, h2 {
+            background: linear-gradient(45deg, #1db954, #1ed760);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .screenshot {
+            max-width: 100%;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 Demostración - Mi Reproductor de Música</h1>
+        
+        <p><strong>¡Tu aplicación PWA de reproductor de música está lista!</strong></p>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="index.html" class="demo-btn">🚀 Abrir Reproductor</a>
+        </div>
+        
+        <h2>✨ Características Principales</h2>
+        <div class="feature-list">
+            <h3>🎯 Funcionalidades Incluidas:</h3>
+            <ul>
+                <li><strong>Reproductor Completo</strong>: Play, Pause, Anterior, Siguiente</li>
+                <li><strong>Control de Volumen</strong>: Barra deslizante de 0-100%</li>
+                <li><strong>Barra de Progreso</strong>: Seek temporal y visualización de duración</li>
+                <li><strong>Lista de Reproducción</strong>: Haz clic en cualquier canción</li>
+                <li><strong>Modo Aleatorio</strong>: Reproduce tus canciones en orden aleatorio</li>
+                <li><strong>Modo Repetición</strong>: None, All, One (con indicador visual)</li>
+                <li><strong>Subida de Archivos</strong>: Botón "+" o arrastra y suelta</li>
+                <li><strong>Diseño Responsive</strong>: Se adapta perfectamente a móviles</li>
+                <li><strong>Atajos de Teclado</strong>: Espacio (play/pause), flechas (navegación)</li>
+                <li><strong>Instalación PWA</strong>: Se instala como app nativa</li>
+            </ul>
+        </div>
+        
+        <h2>📱 Cómo Instalar como App</h2>
+        <div class="step">
+            <strong>1. Abrir la aplicación</strong><br>
+            Haz clic en "Abrir Reproductor" arriba
+        </div>
+        
+        <div class="step">
+            <strong>2. En móvil (Android/iOS)</strong><br>
+            Chrome/Firefox: Menú → "Añadir a pantalla de inicio"<br>
+            Safari iOS: Compartir → "Añadir a pantalla de inicio"
+        </div>
+        
+        <div class="step">
+            <strong>3. En computadora</strong><br>
+            Busca el icono de instalación (➕) en la barra de direcciones
+        </div>
+        
+        <div class="step">
+            <strong>4. ¡Listo!</strong><br>
+            Tu reproductor aparecerá como app independiente
+        </div>
+        
+        <h2>🎶 Cómo Usar</h2>
+        <div class="feature-list">
+            <ol>
+                <li><strong>Añadir música</strong>: Haz clic en "+ Añadir Música" o arrastra archivos</li>
+                <li><strong>Formatos soportados</strong>: MP3, WAV, OGG, M4A, AAC</li>
+                <li><strong>Reproducir</strong>: Selecciona una canción de la lista</li>
+                <li><strong>Controlar</strong>: Usa los botones o atajos de teclado</li>
+                <li><strong>Personalizar</strong>: Activa aleatorio o selecciona modo de repetición</li>
+            </ol>
+        </div>
+        
+        <h2>⌨️ Atajos de Teclado</h2>
+        <div class="feature-list">
+            <ul>
+                <li><code>Espacio</code> - Reproducir/Pausar</li>
+                <li><code>←</code> - Canción anterior</li>
+                <li><code>→</code> - Canción siguiente</li>
+                <li><code>Ctrl+S</code> - Alternar aleatorio</li>
+                <li><code>Ctrl+R</code> - Cambiar modo repetición</li>
+            </ul>
+        </div>
+        
+        <h2>🎨 Características del Diseño</h2>
+        <div class="feature-list">
+            <ul>
+                <li><strong>Diseño Moderno</strong>: Gradientes y transparencias</li>
+                <li><strong>Responsive</strong>: Se adapta a móviles y escritorio</li>
+                <li><strong>Dark Mode Ready</strong>: Funciona con modo oscuro del sistema</li>
+                <li><strong>Animaciones Suaves</strong>: Transiciones y efectos visuales</li>
+                <li><strong>Interfaz Intuitiva</strong>: Controles familiares y accesibles</li>
+            </ul>
+        </div>
+        
+        <h2>🔧 Archivos Incluidos</h2>
+        <div class="feature-list">
+            <ul>
+                <li><strong>index.html</strong> - Aplicación principal</li>
+                <li><strong>styles.css</strong> - Diseño responsive</li>
+                <li><strong>script.js</strong> - Funcionalidad completa</li>
+                <li><strong>manifest.json</strong> - Configuración PWA</li>
+                <li><strong>sw.js</strong> - Service Worker para offline</li>
+                <li><strong>icons/</strong> - Iconos de aplicación</li>
+            </ul>
+        </div>
+        
+        <h2>🚀 Próximos Pasos</h2>
+        <div class="feature-list">
+            <ol>
+                <li><strong>Abre la aplicación</strong> haciendo clic en el botón de arriba</li>
+                <li><strong>Instálala como PWA</strong> siguiendo las instrucciones</li>
+                <li><strong>Añade tus archivos de música</strong> para empezar a usarla</li>
+                <li><strong>Personaliza</strong> el diseño editando los archivos CSS</li>
+                <li><strong>Comparte</strong> la aplicación con otros</li>
+            </ol>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="index.html" class="demo-btn">🎵 ¡Comenzar a Usar el Reproductor!</a>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; opacity: 0.7; font-size: 0.9rem;">
+            <p>Desarrollado por <strong>MiniMax Agent</strong></p>
+            <p>Tu reproductor personal, privado y completo</p>
+        </div>
+    </div>
+</body>
+</html>

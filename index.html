@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1db954">
+    <title>Mi Reproductor de Música</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Iconos -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎵 Mi Música</h1>
+            <div class="header-right">
+                <button id="uploadBtn" class="upload-btn">+ Añadir Música</button>
+                <button id="folderBtn" class="folder-btn" title="Seleccionar carpeta de música">📁 Carpeta de Música</button>
+                <button id="clearDuplicatesBtn" class="optimize-btn" title="Eliminar duplicados">🧹</button>
+                <button id="releaseMemoryBtn" class="optimize-btn" title="Liberar memoria">🗑️</button>
+                <button id="showStatsBtn" class="optimize-btn" title="Mostrar estadísticas">📊</button>
+                <button id="clearPlaylistBtn" class="optimize-btn" title="Limpiar toda la playlist">🧽</button>
+                <input type="file" id="fileInput" accept="audio/*" multiple style="display: none;">
+                <input type="file" id="folderInput" webkitdirectory directory multiple style="display: none;">
+            </div>
+        </header>
+
+        <!-- Reproductor Principal -->
+        <div class="player-card">
+            <!-- Información de la canción -->
+            <div class="song-info">
+                <div class="album-art" id="albumArt">
+                    <div class="default-icon">🎵</div>
+                </div>
+                <div class="song-details">
+                    <h3 id="songTitle">Selecciona una canción</h3>
+                    <p id="songArtist">Artista desconocido</p>
+                </div>
+            </div>
+
+            <!-- Controles de Reproducción -->
+            <div class="controls">
+                <button id="shuffleBtn" class="control-btn" title="Aleatorio">🔀</button>
+                <button id="prevBtn" class="control-btn" title="Anterior">⏮️</button>
+                <button id="playBtn" class="play-btn" title="Reproducir/Pausar">▶️</button>
+                <button id="nextBtn" class="control-btn" title="Siguiente">⏭️</button>
+                <button id="repeatBtn" class="control-btn" title="Repetir">🔁</button>
+            </div>
+
+            <!-- Barra de Progreso -->
+            <div class="progress-container">
+                <span id="currentTime">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+                <span id="duration">0:00</span>
+            </div>
+
+            <!-- Control de Volumen -->
+            <div class="volume-container">
+                <span>🔊</span>
+                <input type="range" id="volumeSlider" min="0" max="100" value="50">
+                <span id="volumeValue">50%</span>
+            </div>
+        </div>
+
+        <!-- Lista de Reproducción -->
+        <div class="playlist">
+            <h2>Lista de Reproducción</h2>
+            <div id="playlistContainer" class="playlist-container">
+                <div class="empty-playlist">
+                    <p>📁 No hay canciones</p>
+                    <p>Haz clic en "Añadir Música" para cargar tus archivos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Mi Reproductor - MiniMax Agent</p>
+        </footer>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="audioPlayer" preload="metadata"></audio>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registrado exitosamente:', registration.scope);
+                    })
+                    .catch((registrationError) => {
+                        console.log('Error al registrar SW:', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
