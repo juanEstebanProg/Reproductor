@@ -7,14 +7,14 @@
     <title>Mi Reproductor de Música</title>
     
     <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="./manifest.json">
     
     <!-- Iconos -->
-    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./icons/icon-512.png">
     
     <!-- Estilos -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <div class="container">
@@ -85,7 +85,7 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p>&copy; Reproductor - Juan Productions</p>
+            <p>&copy; 2024 Mi Reproductor - MiniMax Agent</p>
         </footer>
     </div>
 
@@ -93,13 +93,13 @@
     <audio id="audioPlayer" preload="metadata"></audio>
 
     <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
     
     <!-- Service Worker Registration -->
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
+                navigator.serviceWorker.register('./sw.js')
                     .then((registration) => {
                         console.log('SW registrado exitosamente:', registration.scope);
                     })
