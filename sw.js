@@ -1,13 +1,13 @@
 // Service Worker para Mi Reproductor de Música
-const CACHE_NAME = 'mi-reproductor-v1.0.0';
+const CACHE_NAME = 'mi-reproductor-v2.0.0';
 const urlsToCache = [
-    '/',
-    '/index.html',
-    '/styles.css',
-    '/script.js',
-    '/manifest.json',
-    '/icons/icon-192.png',
-    '/icons/icon-512.png'
+    './',
+    './index.html',
+    './styles.css',
+    './script.js',
+    './manifest.json',
+    './icons/icon-192.png',
+    './icons/icon-512.png'
 ];
 
 // Instalar Service Worker
@@ -151,8 +151,8 @@ self.addEventListener('push', function(event) {
     
     const options = {
         body: event.data ? event.data.text() : 'Nueva funcionalidad disponible',
-        icon: '/icons/icon-192.png',
-        badge: '/icons/icon-192.png',
+        icon: './icons/icon-192.png',
+        badge: './icons/icon-192.png',
         vibrate: [100, 50, 100],
         data: {
             dateOfArrival: Date.now(),
@@ -162,12 +162,12 @@ self.addEventListener('push', function(event) {
             {
                 action: 'explore',
                 title: 'Explorar',
-                icon: '/icons/icon-192.png'
+                icon: './icons/icon-192.png'
             },
             {
                 action: 'close',
                 title: 'Cerrar',
-                icon: '/icons/icon-192.png'
+                icon: './icons/icon-192.png'
             }
         ]
     };
@@ -185,7 +185,7 @@ self.addEventListener('notificationclick', function(event) {
     
     if (event.action === 'explore') {
         event.waitUntil(
-            clients.openWindow('/')
+            clients.openWindow('./')
         );
     } else if (event.action === 'close') {
         // Simplemente cerrar la notificación
@@ -193,7 +193,7 @@ self.addEventListener('notificationclick', function(event) {
     } else {
         // Click en la notificación (sin action específica)
         event.waitUntil(
-            clients.openWindow('/')
+            clients.openWindow('./')
         );
     }
 });
@@ -212,7 +212,7 @@ self.addEventListener('updatefound', function(event) {
             // Mostrar notificación de actualización
             self.registration.showNotification('Actualización disponible', {
                 body: 'Una nueva versión de la aplicación está disponible. Recarga para actualizar.',
-                icon: '/icons/icon-192.png',
+                icon: './icons/icon-192.png',
                 tag: 'update-available'
             });
         }
